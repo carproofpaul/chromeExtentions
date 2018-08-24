@@ -6,4 +6,10 @@ This directory contains three individual chrome extenstions. They all inject the
 
     For Kijiji, the vin was possibly embbedded in two places, in the carproof vhr link or in the html itself. I got this data by making a fetch call to the kijiji link (this wasn't needed, chrome extensions can get the page's html directly, but I didn't know that at this moment). After knowing the pattern, I was able to just use a regex to get the vin. For the odometer reading, it was directly embedded in the page.
 
-    For Autotrader, it uses a mix of both techniques. There's two possible carproof links that we can use. The listings with an already purchased vhr, I took the link, went o the vhr page and scrape the vin from there. The listings that have the 'purchase a carproof' link, the vin was embedded in that. For mileage, I use the same adesa method. There's a particular option where the user needs to enter their email to see the vhr, for these cases, I couldn't scrape the vin.    
+    For Autotrader, it uses a mix of both techniques. There's two possible carproof links that we can use. The listings with an already purchased vhr, I took the link, went o the vhr page and scrape the vin from there. The listings that have the 'purchase a carproof' link, the vin was embedded in that. For mileage, I use the same adesa method. There's a particular option where the user needs to enter their email to see the vhr, for these cases, I couldn't scrape the vin.
+
+    To add an extension to your browser:
+        Visit chrome://extensions (via omnibox or menu -> Tools -> Extensions).
+        Enable Developer mode by ticking the checkbox in the upper-right corner.
+        Click on the "Load unpacked extension..." button.
+        Select the directory containing your unpacked extension.
