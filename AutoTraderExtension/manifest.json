@@ -1,0 +1,36 @@
+{
+	"manifest_version": 2,
+
+	"name": "AutoTrader Data Scraper",
+	"description": "A simple page-scraping extension for Chrome",
+	"version": "1.0",
+	"author": "Kamran Fekri",
+
+	"background": {
+		"scripts": ["popup.js"],
+		"persistent": true
+	},
+
+	"content_scripts": [
+		{
+		  "matches": ["http://wwwb.autotrader.ca/a/*"],
+		  "js": ["content.js"]
+		},
+		{
+			"matches": ["http://wwwb.autotrader.ca/cars/*"],
+			"js": ["list.js"]
+		}
+	  ],
+
+	"permissions": [
+		"<all_urls>",
+		"https://devapivaluationwebservice.carproof.com/*",
+        "tabs",
+        "http://*/",
+        "https://*/"
+    ],
+	"browser_action": {
+		"default_icon": "logo.png",
+		"default_popup": "popup.html"
+	}
+}

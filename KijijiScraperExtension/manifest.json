@@ -1,0 +1,26 @@
+{
+	"manifest_version": 2,
+
+	"name": "Kijiji Data Scraper",
+	"description": "A simple kijij scraping extension for Chrome",
+	"version": "1.0",
+	"author": "Kamran Fekri",
+
+	"background": {
+		"scripts": ["popup.js"],
+		"persistent": true
+	},
+
+	"permissions": [
+		"https://ouep1x9np9.execute-api.us-east-1.amazonaws.com/*",
+		"http://devapivaluationwebservice.carproof.com/*",
+		"https://www.kijiji.ca/*",
+        "tabs",
+        "http://*/",
+        "https://*/"
+    ],
+	"browser_action": {
+		"default_icon": "logo.png",
+		"default_popup": "popup.html"
+	}
+}

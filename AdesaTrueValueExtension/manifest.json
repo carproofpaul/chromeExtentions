@@ -1,0 +1,43 @@
+{
+	"manifest_version": 2,
+
+	"name": "Adesa True Value",
+	"description": "Automatically adds the True Value to the page.",
+	"version": "1.0",
+	"author": "Kamran Fekri",
+
+	"background": {
+		"scripts": ["popup.js"],
+		"persistent": true
+	},
+
+	"content_scripts": [
+		{
+		  "matches": ["https://buy.adesa.ca/openauctionca/runlistSearchResults.html?*"],
+		  "js": ["content.js"]
+		},
+		{
+			"matches": ["https://buy.adesa.ca/openauctionca/detail.html?*"],
+			"js": ["detail.js"]
+		},
+		{
+			"matches": [
+						"https://buy.adesa.ca/openauctionca/searchResults31.html?*", 
+						"https://buy.adesa.ca/openauctionca/sellerDetails.html?*"
+					],
+			"js": ["vehicleSearch.js"]
+		}
+	  ],
+
+	"permissions": [
+		"<all_urls>",
+		"https://devapivaluationwebservice.carproof.com/*",
+        "tabs",
+        "http://*/",
+        "https://*/"
+    ],
+	"browser_action": {
+		"default_icon": "fox.png",
+		"default_popup": "popup.html"
+	}
+}
