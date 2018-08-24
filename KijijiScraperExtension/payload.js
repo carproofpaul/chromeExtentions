@@ -134,24 +134,3 @@ function getGenericMarketValue(year, make, model){
 
     })
 }
-
-function htmlToText(html){
-    /*
-    //remove code brakes and tabs
-    html = html.replace(/\n/g, "");
-    html = html.replace(/\t/g, "");
-
-    //keep html brakes and tabs
-    html = html.replace(/<\/td>/g, "\t");
-    html = html.replace(/<\/table>/g, "\n");
-    html = html.replace(/<\/tr>/g, "\n");
-    html = html.replace(/<\/p>/g, "\n");
-    html = html.replace(/<\/div>/g, "\n");
-    html = html.replace(/<\/h>/g, "\n");
-    html = html.replace(/<br>/g, "\n"); html = html.replace(/<br( )*\/>/g, "\n");
-    */
-
-    //parse html into text
-    var dom = (new DOMParser()).parseFromString('<!doctype html><body>' + html, 'text/html');
-    return dom.body.textContent;
-}
