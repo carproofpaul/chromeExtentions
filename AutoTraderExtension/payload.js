@@ -1,15 +1,6 @@
 try{
-    var btn = document.createElement("BUTTON")
-    var t = document.createTextNode("CLICK ME");
-    btn.appendChild(t);
-    //Appending to DOM 
-    document.body.appendChild(btn);
     
-    document.getElementById("vdp_389503495").textContent = "test"
-    const text = document.body.innerText
-    const arr = text.split(/\s+/)
-    //text.match(/[a-zA-Z0-9]{9}[a-zA-Z0-9-]{3}[0-9]{5}/g)
-   // const arr = text.split()
+    const arr = document.body.innerText.split(/\s+/)
 
     let data = []
 
@@ -25,6 +16,11 @@ try{
     chrome.runtime.sendMessage(e.message)
 }
 
+/**
+ * 
+ * @param {vin} vin 
+ * @param {price to be inject} price 
+ */
 function injectPrice(vin, price){
     var elements = document.getElementsByTagName('*');
 
